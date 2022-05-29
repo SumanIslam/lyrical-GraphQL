@@ -1,5 +1,11 @@
-const app = require('./server/server');
+const { app, mongoConnect } = require('./server/server');
 
-app.listen(4000, () => {
-  console.log('Listening');
-});
+async function startServer() {
+  await mongoConnect();
+  
+  app.listen(4000, () => {
+    console.log('Listening');
+  });
+}
+
+startServer();
