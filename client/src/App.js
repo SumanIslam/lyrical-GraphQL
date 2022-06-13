@@ -1,3 +1,5 @@
+import { Routes, Route, Link } from "react-router-dom";
+
 import "materialize-css/dist/css/materialize.min.css";
 import M from 'materialize-css/dist/js/materialize.min.js';
 
@@ -12,7 +14,10 @@ function App() {
   });
   
   return (
-    <SongList />
+    <Routes>
+      <Route path="/" element={<SongList />} />
+    </Routes>
+    
   );
 }
 
