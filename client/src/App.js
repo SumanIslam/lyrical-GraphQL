@@ -6,6 +6,7 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 import { useEffect } from "react";
 
 import SongList from "./component/SongList.component";
+import SongCreate from "./component/songCreate.component";
 
 function App() {
   useEffect(() => {
@@ -16,6 +17,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<SongList />} />
+      <Route path="/song/create" element={<SongCreate />} />
     </Routes>
     
   );
