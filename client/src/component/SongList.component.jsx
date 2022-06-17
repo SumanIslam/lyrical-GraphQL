@@ -15,16 +15,18 @@ function SongList() {
   if (error) return `Error! ${error.message}`;
 
   return (
-    <div className='collection'>
-      {
-        data.songs.map((song) => {
-          return (
-            <li key={song.id} className='collection-item' >
-              {song.title}
-            </li>
-          )
-        })
-      }
+    <div className='container'>
+      <div className='collection'>
+        {
+          data.songs.map((song) => {
+            return (
+              <li key={song.id} className='collection-item' >
+                {song.title}
+              </li>
+            )
+          })
+        }
+      </div>
     </div>
   )
 };
