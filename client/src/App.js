@@ -7,7 +7,8 @@ import "material-icons/iconfont/material-icons.css";
 
 import { useEffect } from "react";
 
-import SongList from "./component/SongList.component";
+// import SongList from "./component/SongList.component";
+import SongListContainer from "./component/songListContainer.component";
 import SongCreate from "./component/songCreate.component";
 
 function App() {
@@ -17,12 +18,11 @@ function App() {
   });
   
   return (
-    <Routes>
-      <Route path="/" element={<SongList />} />
-      <Route path="/song/create" element={<SongCreate />} />
-    </Routes>
-    
-  );
+		<Routes>
+			<Route path="/" element={<SongListContainer />} />
+			<Route path="/song/create" element={<SongCreate />} />
+		</Routes>
+	);
 }
 
 export default App;
