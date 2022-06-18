@@ -1,7 +1,9 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import "materialize-css/dist/css/materialize.min.css";
 import M from 'materialize-css/dist/js/materialize.min.js';
+
+import "material-icons/iconfont/material-icons.css";
 
 import { useEffect } from "react";
 

@@ -1,5 +1,7 @@
 import { gql, useQuery } from '@apollo/client';
 
+import AddButton from './addButton.component';
+
 const songList = gql`
   query getSongs {
     songs {
@@ -27,6 +29,7 @@ function SongList() {
           })
         }
       </div>
+      <AddButton />
     </div>
   )
 };
