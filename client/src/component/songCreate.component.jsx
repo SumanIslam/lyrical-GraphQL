@@ -24,18 +24,20 @@ function SongCreate() {
     setTitle(e.target.value);
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addSong({ variables: {title: title}});
+    setTitle('');
+    navigate('/', { replace: true });
+  }
+
   return(
     <div className="container">
       <Link to="/">
         <h5>Back</h5>
       </Link>
       <h3>Create a new Song</h3>
-      <form onSubmit={e => {
-        e.preventDefault();
-        addSong({ variables: {title: title}});
-        setTitle('');
-        navigate('/')
-      }}>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="">Song Title: </label>
         <input
           onChange={changeTitle}
