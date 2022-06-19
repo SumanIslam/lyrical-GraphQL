@@ -1,12 +1,16 @@
 import { useState } from "react";
-import { useMutation, gql } from "@apollo/client";
+import { useMutation, } from "@apollo/client";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import { ADD_SONG } from "../queries/queries";
+import { ADD_SONG, GET_SONGS } from "../queries/queries";
 
 function SongCreate() {
   const [title, setTitle] = useState('');
-  const [addSong, { data, loading, error }] = useMutation(ADD_SONG);
+  const [addSong, { data, loading, error }] = useMutation(ADD_SONG, {
+  refetchQueries: [
+    {query: GET_SONGS}
+  ],
+});
 
   let navigate = useNavigate();
 
