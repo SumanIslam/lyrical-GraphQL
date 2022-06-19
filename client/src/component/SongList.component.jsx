@@ -1,16 +1,8 @@
-import { gql, useQuery } from '@apollo/client';
-
-const songList = gql`
-  query getSongs {
-    songs {
-      id
-      title
-    }
-  }
-`;
+import { useQuery } from '@apollo/client';
+import { GET_SONGS } from '../queries/queries';
 
 function SongList() {
-  const { loading, error, data } = useQuery(songList);
+  const { loading, error, data } = useQuery(GET_SONGS);
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
 

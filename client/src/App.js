@@ -7,7 +7,6 @@ import "material-icons/iconfont/material-icons.css";
 
 import { useEffect } from "react";
 
-// import SongList from "./component/SongList.component";
 import SongListContainer from "./component/songListContainer.component";
 import SongCreate from "./component/songCreate.component";
 

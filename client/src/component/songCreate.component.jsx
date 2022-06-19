@@ -2,14 +2,7 @@ import { useState } from "react";
 import { useMutation, gql } from "@apollo/client";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-
-const ADD_SONG = gql`
-  mutation AddSong($title:String){
-    addSong(title: $title) {
-      title
-    }
-  }
-`
+import { ADD_SONG } from "../queries/queries";
 
 function SongCreate() {
   const [title, setTitle] = useState('');
