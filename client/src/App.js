@@ -9,6 +9,7 @@ import { useEffect } from "react";
 
 import SongListContainer from "./component/songListContainer.component";
 import SongCreate from "./component/songCreate.component";
+import SongDetail from "./component/songDetail.component";
 
 function App() {
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
 		<Routes>
 			<Route path="/" element={<SongListContainer />} />
 			<Route path="/song/create" element={<SongCreate />} />
+      <Route path="/songs/:id" element={<SongDetail />} />
 		</Routes>
 	);
 }
