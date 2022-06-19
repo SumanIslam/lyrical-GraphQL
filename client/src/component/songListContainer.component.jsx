@@ -1,5 +1,5 @@
 import SongList from "./SongList.component";
-import AddButton from "./addButton.component";
+import AddButton from "./button/addButton.component";
 
 function SongListContainer() {
   return(

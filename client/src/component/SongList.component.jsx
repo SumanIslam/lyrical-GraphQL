@@ -1,6 +1,8 @@
 import { useQuery } from '@apollo/client';
 import { GET_SONGS } from '../queries/queries';
 
+import DeleteButton from './button/deleteButton.component';
+
 function SongList() {
   const { loading, error, data } = useQuery(GET_SONGS);
   if (loading) return 'Loading...';
@@ -9,10 +11,11 @@ function SongList() {
   return (
     <div className='collection'>
       {
-        data.songs.map((song) => {
+        data.songs.map(({ id, title }) => {
           return (
-            <li key={song.id} className='collection-item' >
-              {song.title}
+            <li key={id} className='collection-item' >
+              {title}
+              <DeleteButton id={id} />
             </li>
           )
         })
