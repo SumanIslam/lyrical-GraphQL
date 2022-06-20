@@ -7,10 +7,10 @@ import { ADD_SONG, GET_SONGS } from "../queries/queries";
 function SongCreate() {
   const [title, setTitle] = useState('');
   const [addSong, { data, loading, error }] = useMutation(ADD_SONG, {
-  refetchQueries: [
-    {query: GET_SONGS}
-  ],
-});
+    refetchQueries: [
+      {query: GET_SONGS}
+    ],
+  });
 
   let navigate = useNavigate();
 
