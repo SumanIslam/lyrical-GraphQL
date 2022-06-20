@@ -15,14 +15,16 @@ function SongDetail() {
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
 
+  const { song } = data
+
   return(
     <div className="container">
       <Link to="/">
         <h5>Back</h5>
       </Link>
-      <h3>{data.song.title}</h3>
-      <LyricList />
-      <LyricCreate song={data.song} />
+      <h3>{song.title}</h3>
+      <LyricList lyrics={song.lyrics} />
+      <LyricCreate id={song.id} />
     </div>
   )
 }

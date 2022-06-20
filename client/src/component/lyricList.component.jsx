@@ -1,7 +1,19 @@
-function LyricList() {
+function LyricList(props) {
+  console.log(props);
   return(
-    <ul>
-      LyricList
+    <ul className="collection">
+      {
+        props.lyrics.map(({id, content}) => {
+          return(
+            <li
+            key={id}
+            className="collection-item"
+            >
+              {content}
+            </li>
+          )
+        })
+      }
     </ul>
   )
 }
