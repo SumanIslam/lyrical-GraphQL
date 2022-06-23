@@ -1,6 +1,15 @@
+import { useMutation } from "@apollo/client";
+import { LIKE_LYRIC } from "../../queries/queries";
+
 function ThumbsUpButton({ id }) {
+  const [likeLyric, { data, loading, error }] = useMutation(LIKE_LYRIC);
+
+  if (loading) return 'Submitting...';
+  if (error) return `Submission error! ${error.message}`;
+
   const handleClick = (id) => {
     console.log(id);
+    likeLyric({variables: {id}})
   }
 
   return(
