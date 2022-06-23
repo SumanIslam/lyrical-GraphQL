@@ -4,7 +4,7 @@ import { LIKE_LYRIC } from "../../queries/queries";
 function ThumbsUpButton({ id }) {
   const [likeLyric, { data, loading, error }] = useMutation(LIKE_LYRIC);
 
-  if (loading) return 'Submitting...';
+  if (loading) return '';
   if (error) return `Submission error! ${error.message}`;
 
   const handleClick = (id) => {
@@ -15,7 +15,7 @@ function ThumbsUpButton({ id }) {
   return(
     <i
     className="material-icons right"
-    style={{cursor: 'pointer'}}
+    style={{cursor: 'pointer',marginTop: '-2px'}}
     onClick={() => handleClick(id)}
     >
       thumb_up_alt

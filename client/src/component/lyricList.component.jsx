@@ -4,14 +4,24 @@ function LyricList({lyrics}) {
   return(
     <ul className="collection">
       {
-        lyrics.map(({id, content}) => {
+        lyrics.map(({id, content, likes}) => {
           return(
             <li
             key={id}
             className="collection-item"
             >
               {content}
-              <ThumbsUpButton id={id} />
+              <div
+              className="right"
+              style={{
+                display: 'flex',
+                justifyContent: "center",
+                alignItems: 'center'
+              }}
+              >
+                {likes}
+                <ThumbsUpButton id={id} />
+              </div>
             </li>
           )
         })
