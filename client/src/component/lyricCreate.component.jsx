@@ -24,7 +24,7 @@ function LyricCreate({ id }) {;
   }
 
   return(
-    <div style={{"margin-top": "2.5rem"}}>
+    <div style={{marginTop: "2.5rem"}}>
       <form onSubmit={handleSubmit}>
         <label htmlFor="" style={{fontSize: '1.4rem'}}>Add a lyric</label>
         <input

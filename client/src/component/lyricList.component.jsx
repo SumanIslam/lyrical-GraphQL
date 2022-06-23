@@ -1,15 +1,17 @@
-function LyricList(props) {
-  console.log(props);
+import ThumbsUpButton from "./button/thumbsupButton.component";
+
+function LyricList({lyrics}) {
   return(
     <ul className="collection">
       {
-        props.lyrics.map(({id, content}) => {
+        lyrics.map(({id, content}) => {
           return(
             <li
             key={id}
             className="collection-item"
             >
               {content}
+              <ThumbsUpButton id={id} />
             </li>
           )
         })
