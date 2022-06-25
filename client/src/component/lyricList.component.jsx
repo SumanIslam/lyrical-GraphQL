@@ -19,8 +19,7 @@ function LyricList({lyrics}) {
                 alignItems: 'center'
               }}
               >
-                {likes}
-                <ThumbsUpButton id={id} />
+                <ThumbsUpButton id={id} likes={likes} />
               </div>
             </li>
           )
